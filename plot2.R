@@ -17,9 +17,9 @@ data <- subset(data,Date>="2007-02-01")
 data$datetime <- strptime(paste(data$Date,data$Time)
                           ,format = "%Y-%m-%d %H:%M:%S")
 #Opening png
-png(filename = "plot1.png",width = 480, height = 480)
-#Creating histogram
-hist(data$Global_active_power,col="red",
-     xlab="Global Active Power (kilowatts)",main = "Global Active Power")
-#Closing histogram
+png(filename = "plot2.png",width = 480, height = 480)
+#Creating plot
+plot(data$datetime,data$Global_active_power,type = "l",
+     xlab = "",ylab = "Global Active Power (kilowatts)")
+#Closing plot
 dev.off()
